@@ -9,4 +9,30 @@ node default {
 
 	include nginx
 
+	nginx::site { "ajbourg.com":
+		domain	=> "ajbourg.com",
+		aliases	=> ["www.ajbourg.com"],
+		root	=> "/var/www/ajbourg.com/html",
+	}
+
+	nginx::site { "itand.me":
+		domain	=> "itand.me",
+		aliases	=> ["www.itand.me", "www2.itand.me"],
+		default_vhost => true,
+		root	=> "/var/www/itand.me/html",
+	}
+
+	nginx::site { "elevation14.com":
+		domain	=> "elevation14.com",
+		aliases	=> ["www.elevation14.com"],
+		root	=> "/var/www/elevation14.com/html",
+	}
+
+	# Need to figure out how to have fastcgi stuff
+	#nginx::site { "blog.ajbourg.com":
+	#	domain	=> "blog.ajbourg.com",
+	#	aliases	=> ["*.blog.ajbourg.com"],
+	#	root	=> "/var/www/blog.ajbourg.com/WordPress",
+	#	upstreams=> ["127.0.0.1:9000"],
+	#}
 }
