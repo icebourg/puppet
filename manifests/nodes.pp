@@ -9,6 +9,7 @@ node default {
 
 	include tir
 	include nginx
+	include mysql::server
 
 	nginx::site { "ajbourg.com":
 		domain	=> "ajbourg.com",
