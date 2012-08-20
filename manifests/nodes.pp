@@ -7,6 +7,7 @@ node default {
 			user	=> root,
 	}
 
+	include tir
 	include nginx
 
 	nginx::site { "ajbourg.com":
