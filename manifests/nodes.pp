@@ -10,6 +10,10 @@ node default {
 	include tir
 	include nginx
 	include mysql::server
+	
+	file { "/var/www":
+	  ensure  => "directory"
+	}
 
 	nginx::site { "ajbourg.com":
 		domain	=> "ajbourg.com",
