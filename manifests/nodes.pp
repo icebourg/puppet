@@ -14,7 +14,8 @@ node default {
 	
 	# bootstrap being able to run puppet librarian for our Puppet file
 	package { 'librarian-puppet':
-        ensure   => 'installed',
-        provider => 'gem',
+        ensure      => 'installed',
+        provider    => 'gem',
+        require     => ['ruby1.9.1-dev', 'rubygems', 'ruby1.9.1-full']
   }
 }
