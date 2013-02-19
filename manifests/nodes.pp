@@ -22,5 +22,5 @@ node default {
         ensure      => 'installed',
         provider    => 'gem',
         require     => [ Package['ruby1.9.1-dev'], Package['rubygems'], Package['ruby1.9.1-full'] ]
-  }
+    }
 }
