@@ -7,7 +7,7 @@ This is mostly to just try to keep up with Puppet best practices and the latest 
 This repo is designed to run masterless. Overall workflow on a new machine:
 
 Do this once:  
-apt-get install rubygems  
+apt-get install rubygems git-core  
 gem install puppet librarian-puppet --no-ri --no-rdoc  
 git clone git@github.com:icebourg/puppet.git /etc/puppet  
 
