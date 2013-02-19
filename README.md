@@ -6,9 +6,9 @@ This is mostly to just try to keep up with Puppet best practices and the latest 
 
 This repo is designed to run masterless. Overall workflow on a new machine:
 
-Do this once:
-gem install puppet librarian-puppet
-git clone git@github.com:icebourg/puppet.git /etc/puppet
+Do this once:  
+gem install puppet librarian-puppet  
+git clone git@github.com:icebourg/puppet.git /etc/puppet  
 
-Do this anytime you want to update and apply new puppetry:
-cd /etc/puppet; git pull; librarian-puppet install; puppet apply /etc/puppet/manifests/site.pp
+Do this anytime you want to update and apply new puppetry:  
+cd /etc/puppet; git pull; librarian-puppet install; puppet apply /etc/puppet/manifests/site.pp  
