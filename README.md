@@ -8,7 +8,7 @@ This repo is designed to run masterless. Overall workflow on a new machine:
 
 Do this once:  
 apt-get install rubygems  
-gem install puppet librarian-puppet  
+gem install puppet librarian-puppet --no-ri --no-rdoc  
 git clone git@github.com:icebourg/puppet.git /etc/puppet  
 
 Do this anytime you want to update and apply new puppetry:  
