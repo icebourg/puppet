@@ -13,16 +13,4 @@ node default {
 	package { ['vim', 'git-core']:
 	    ensure => "present"
 	}
-	
-	# dependencies for building gems
-	package { ['ruby1.9.1-dev', 'rubygems', 'ruby1.9.1-full']:
-	    ensure => "present"
-	}
-	
-	# bootstrap being able to run puppet librarian for our Puppet file
-	package { 'librarian-puppet':
-        ensure      => 'installed',
-        provider    => 'gem',
-        require     => [ Package['ruby1.9.1-dev'], Package['rubygems'], Package['ruby1.9.1-full'] ]
-    }
 }
