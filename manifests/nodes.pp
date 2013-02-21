@@ -6,6 +6,19 @@ node default {
         listen    => '/var/run/fpm_www.sock',
         pm_max_requests => 500,
     }
+    
+    include nginx
+    
+    nginx::site { "ajbourg.com":
+        domain  => "ajbourg.com",
+        aliases => ["www.ajbourg.com"],
+        root    => "/var/www/ajbourg.com/html",
+    }
+    
+    file {["/var/www/ajbourg.com", "/var/www/ajbourg.com/html"]:
+        ensure  => "directory",
+        require => nginx::site["ajbourg.com"]
+    }
 
     ssh_authorized_key { "ssh_key_root_mba":
 		ensure	=> present,
