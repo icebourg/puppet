@@ -14,11 +14,6 @@ node default {
         aliases => ["www.ajbourg.com"],
         root    => "/var/www/ajbourg.com/html",
     }
-    
-    file {["/var/www/ajbourg.com", "/var/www/ajbourg.com/html"]:
-        ensure  => "directory",
-        require => nginx::site["ajbourg.com"]
-    }
 
     ssh_authorized_key { "ssh_key_root_mba":
 		ensure	=> present,
