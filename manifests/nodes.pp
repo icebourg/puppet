@@ -7,12 +7,17 @@ node default {
         pm_max_requests => 500,
     }
     
+    file { "/var/www":
+        ensure  => "directory"
+    }
+    
     include nginx
     
     nginx::site { "ajbourg.com":
         domain  => "ajbourg.com",
         aliases => ["www.ajbourg.com"],
         root    => "/var/www/ajbourg.com/html",
+        require => File["/var/www"]
     }
 
     ssh_authorized_key { "ssh_key_root_mba":
