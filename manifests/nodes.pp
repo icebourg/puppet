@@ -15,7 +15,7 @@ node default {
     
     nginx::site { "ajbourg.com":
         domain  => "ajbourg.com",
-        aliases => ["www.ajbourg.com"],
+        aliases => ["www.ajbourg.com", "${hostname}.ajbourg.com", "dev.ajbourg.com"],
         root    => "/var/www/ajbourg.com/html",
         require => File["/var/www"]
     }
