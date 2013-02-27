@@ -13,7 +13,7 @@ node default {
 	}
 }
 
-node "srv*" inherits default {
+node /srv.*/ inherits default {
 
     include php::fpm
     
@@ -36,6 +36,6 @@ node "srv*" inherits default {
     }
 }
 
-node "minecraft-*" inherits default {
+node /minecraft\-.*/ inherits default {
 	
 }
