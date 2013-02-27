@@ -42,4 +42,18 @@ node /minecraft\-.*/ inherits default {
 	minecraft-server::manage { "controlled-chaos":
 		path	=> "/home/minecraft-cc"
 	}
+	
+	minecraft-server::manage { "controlled-chaos":
+		path		=> "/home/minecraft-cc",
+		properties	=> {
+			"port" => { "value" => "25565" },
+			"level-name" => { "value" => "ControlledChaos" },
+			"max-build-height" => { "value" => "256" },
+			"white-list" => { "value" => "false" },
+			"spawn-animals" => { "value" => "true" },
+			"hardcore" => { "value" => "false" },
+			"max-players" => { "value" => "10" },
+			"motd" => { "value" => "CoNTRoLLeD chAOs MiNeCRaFT sErvEr" },
+		 }
+	}
 }
