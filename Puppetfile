@@ -8,5 +8,5 @@ mod "php",
 mod "nginx",
     :git => "https://github.com/icebourg/puppet-module-nginx"
 
-mod "minecraft-server"
-	:git => "https://github.com/icebourg/puppet-minecraft-server.gitu"
+mod "minecraft-server",
+	:git => "https://github.com/icebourg/puppet-minecraft-server.git"
