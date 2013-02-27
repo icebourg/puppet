@@ -37,5 +37,9 @@ node /srv.*/ inherits default {
 }
 
 node /minecraft\-.*/ inherits default {
-	
+	include minecraft-server
+
+	minecraft-server::manage { "controlled-chaos":
+		path	=> "/home/minecraft-cc"
+	}
 }
