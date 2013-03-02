@@ -40,6 +40,8 @@ node /minecraft\-.*/ inherits default {
 	include minecraft-server
 
 	minecraft-server::manage { "survival":
+		user	=> "survival",
+		group	=> "survival",
 		path	=> "/home/minecraft-survival",
 		snapshot=> "13w09a",
 		properties	=> {
