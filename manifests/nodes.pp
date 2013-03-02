@@ -45,21 +45,20 @@ node /minecraft\-.*/ inherits default {
 		path	=> "/home/minecraft-survival",
 		snapshot=> "13w09a",
 		properties	=> {
-			"port" => { "value" => "25566" },
-			"level-name" => { "value" => "SurvivalWorld" },
-			"white-list" => { "value" => "true" },
-			"max-players" => { "value" => "5" },
-			"motd" => { "value" => "The Survival of the Firstest" },
+			"SVport" => { "key" => "port", "value" => "25566" },
+			"SVlevel-name" => { "key" => "level-name", "value" => "SurvivalWorld" },
+			"SVmax-players" => { "key" => "max-players", "value" => "5" },
+			"SVmotd" => { "key" => "motd", "value" => "The Survival of the Firstest" },
 		 }
 	}
 	
 	minecraft-server::manage { "controlled-chaos":
 		path		=> "/home/minecraft-cc",
 		properties	=> {
-			"port" => { "value" => "25565" },
-			"level-name" => { "value" => "ControlledChaos" },
-			"max-players" => { "value" => "10" },
-			"motd" => { "value" => "CoNTRoLLeD chAOs MiNeCRaFT sErvEr" },
+			"CCport" => { "key" => "port", "value" => "25565" },
+			"CClevel-name" => { "key" => "level-name", "value" => "ControlledChaos" },
+			"CCmax-players" => { "key" => "max-players", "value" => "10" },
+			"CCmotd" => { "key" => "motd", "value" => "CoNTRoLLeD chAOs MiNeCRaFT sErvEr" },
 		 }
 	}
 }
