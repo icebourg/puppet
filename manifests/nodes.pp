@@ -39,8 +39,16 @@ node /srv.*/ inherits default {
 node /minecraft\-.*/ inherits default {
 	include minecraft-server
 
-	minecraft-server::manage { "controlled-chaos":
-		path	=> "/home/minecraft-cc"
+	minecraft-server::manage { "survival":
+		path	=> "/home/minecraft-survival",
+		snapshot=> "13w09a",
+		properties	=> {
+			"port" => { "value" => "25566" },
+			"level-name" => { "value" => "SurvivalWorld" },
+			"white-list" => { "value" => "true" },
+			"max-players" => { "value" => "5" },
+			"motd" => { "value" => "The Survival of the Firstest" },
+		 }
 	}
 	
 	minecraft-server::manage { "controlled-chaos":
@@ -48,10 +56,6 @@ node /minecraft\-.*/ inherits default {
 		properties	=> {
 			"port" => { "value" => "25565" },
 			"level-name" => { "value" => "ControlledChaos" },
-			"max-build-height" => { "value" => "256" },
-			"white-list" => { "value" => "false" },
-			"spawn-animals" => { "value" => "true" },
-			"hardcore" => { "value" => "false" },
 			"max-players" => { "value" => "10" },
 			"motd" => { "value" => "CoNTRoLLeD chAOs MiNeCRaFT sErvEr" },
 		 }
