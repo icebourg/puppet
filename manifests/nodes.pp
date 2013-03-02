@@ -43,9 +43,9 @@ node /minecraft\-.*/ inherits default {
 		user	=> "survival",
 		group	=> "survival",
 		path	=> "/home/minecraft-survival",
-		snapshot=> "13w09a",
+		snapshot=> "13w09c",
 		properties	=> {
-			"SVport" => { "key" => "port", "value" => "25566" },
+			"SVport" => { "key" => "server-port", "value" => "25566" },
 			"SVlevel-name" => { "key" => "level-name", "value" => "SurvivalWorld" },
 			"SVmax-players" => { "key" => "max-players", "value" => "5" },
 			"SVmotd" => { "key" => "motd", "value" => "The Survival of the Firstest" },
@@ -55,7 +55,7 @@ node /minecraft\-.*/ inherits default {
 	minecraft-server::manage { "controlled-chaos":
 		path		=> "/home/minecraft-cc",
 		properties	=> {
-			"CCport" => { "key" => "port", "value" => "25565" },
+			"CCport" => { "key" => "server-port", "value" => "25565" },
 			"CClevel-name" => { "key" => "level-name", "value" => "ControlledChaos" },
 			"CCmax-players" => { "key" => "max-players", "value" => "10" },
 			"CCmotd" => { "key" => "motd", "value" => "CoNTRoLLeD chAOs MiNeCRaFT sErvEr" },
