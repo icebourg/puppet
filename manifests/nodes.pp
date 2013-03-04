@@ -27,7 +27,7 @@ node /srv.*/ inherits default {
   
   deployinator::git::deploy_repo { "ajbourg.com":
     path    => "/var/www/ajbourg.com",
-    repo    => "git@github.com:icebourg/ajbourg.com.git"
+    repo    => "git@github.com:icebourg/ajbourg.com.git",
     require => File["/var/www"],
   }
   
