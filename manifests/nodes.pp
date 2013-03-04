@@ -31,6 +31,7 @@ node /srv.*/ inherits default {
     domain  => "ajbourg.com",
     aliases => ["www.ajbourg.com", "${hostname}.ajbourg.com", "dev.ajbourg.com"],
     root    => "/var/www/ajbourg.com/current",
+    manage_directory => false,
     require => File["/var/www"]
   }
   
