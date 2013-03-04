@@ -25,6 +25,12 @@ node /srv.*/ inherits default {
     ensure  => "directory"
   }
   
+  deployinator::git::deploy_repo { "ajbourg.com":
+    path    => "/var/www/ajbourg.com",
+    repo    => "git@github.com:icebourg/ajbourg.com.git"
+    require => File["/var/www"],
+  }
+  
   include nginx
   
   nginx::site { "ajbourg.com":
@@ -32,12 +38,7 @@ node /srv.*/ inherits default {
     aliases => ["www.ajbourg.com", "${hostname}.ajbourg.com", "dev.ajbourg.com"],
     root    => "/var/www/ajbourg.com/current",
     manage_directory => false,
-    require => File["/var/www"]
-  }
-  
-  deployinator::git::deploy_repo { "ajbourg.com":
-    path    => "/var/www/ajbourg.com",
-    repo    => "git@github.com:icebourg/ajbourg.com.git"
+    require => Deployinator::Git::Deploy_repo["ajbourg.com"]
   }
 }
 
