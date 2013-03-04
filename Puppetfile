@@ -3,13 +3,13 @@ forge "http://forge.puppetlabs.com"
 mod "puppetlabs/stdlib"
 
 mod "php",
-    :git => "https://github.com/saz/puppet-php"
+  :git => "https://github.com/saz/puppet-php"
 
 mod "nginx",
-    :git => "https://github.com/icebourg/puppet-module-nginx"
+  :git => "https://github.com/icebourg/puppet-module-nginx"
 
 mod "minecraft-server",
-	:git => "https://github.com/icebourg/puppet-minecraft-server.git"
-  
+  :git => "https://github.com/icebourg/puppet-minecraft-server.git"
+
 mod "deployinator",
-	:git => "https://github.com/icebourg/puppet-deployinator.git"
+  :git => "https://github.com/icebourg/puppet-deployinator.git"
