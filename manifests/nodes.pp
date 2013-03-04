@@ -34,6 +34,11 @@ node /srv.*/ inherits default {
         root    => "/var/www/ajbourg.com/html",
         require => File["/var/www"]
     }
+    
+  deployinator::git::deploy_repo { "ajbourg.com":
+    path    => "/var/www/ajbourg.com",
+    repo    => "git@github.com:icebourg/ajbourg.com.git"
+  }
 }
 
 node /minecraft\-.*/ inherits default {

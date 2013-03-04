@@ -10,3 +10,6 @@ mod "nginx",
 
 mod "minecraft-server",
 	:git => "https://github.com/icebourg/puppet-minecraft-server.git"
+  
+mod "deployinator",
+	:git => "https://github.com/icebourg/puppet-deployinator.git"
