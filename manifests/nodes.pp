@@ -30,7 +30,7 @@ node /srv.*/ inherits default {
   nginx::site { "ajbourg.com":
     domain  => "ajbourg.com",
     aliases => ["www.ajbourg.com", "${hostname}.ajbourg.com", "dev.ajbourg.com"],
-    root    => "/var/www/ajbourg.com/html",
+    root    => "/var/www/ajbourg.com/current",
     require => File["/var/www"]
   }
   
