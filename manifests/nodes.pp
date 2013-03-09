@@ -44,7 +44,7 @@ node /srv.*/ inherits default {
   nginx::site { "blog.ajbourg.com":
     domain  => "blog.ajbourg.com",
     root    => "/var/www/blog.ajbourg.com/public",
-    manage_directory => false,
+    manage_directory => true,
   }
 }
 
