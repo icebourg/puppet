@@ -40,6 +40,12 @@ node /srv.*/ inherits default {
     manage_directory => false,
     require => Deployinator::Git::Deploy_repo["ajbourg.com"]
   }
+
+  nginx::site { "blog.ajbourg.com":
+    domain  => "blog.ajbourg.com",
+    root    => "/var/www/blog.ajbourg.com/public",
+    manage_directory => true,
+  }
 }
 
 node /minecraft\-.*/ inherits default {
