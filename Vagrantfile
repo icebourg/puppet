@@ -41,14 +41,8 @@ Vagrant::Config.run do |config|
       local.vm.box = cfg[:box]
       local.vm.box_url = cfg[:box_url]
       local.vm.host_name = ENV['VAGRANT_HOSTNAME'] || name.to_s.gsub(/_/, '-').concat("dev.ajbourg.com")
-      local.vm.provision :puppet do |puppet|
-        puppet.manifests_path = "manifests"
-        puppet.module_path = "modules"
-        puppet.manifest_file = "init.pp"
-        puppet.options = [
-         '--verbose',
-        ]
-      end
+      config.vm.provision :shell, :path => "shell/main.sh"
+      config.vm.share_folder "puppet", "/tmp/puppet", "./"
     end
   end
 end

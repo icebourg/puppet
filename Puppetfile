@@ -2,8 +2,9 @@ forge "http://forge.puppetlabs.com"
 
 mod "puppetlabs/stdlib"
 
-mod "php",
-  :git => "https://github.com/saz/puppet-php"
+# Causing issues with librarian-puppet in vagrant for some reason #odd
+#mod "php",
+#  :git => "https://github.com/saz/puppet-php"
 
 mod "nginx",
   :git => "https://github.com/icebourg/puppet-module-nginx"
