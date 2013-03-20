@@ -55,7 +55,6 @@ node /minecraft\-.*/ inherits default {
     user       => "survival",
     group      => "survival",
     path       => "/home/minecraft-survival",
-    snapshot   => "13w09c",
     properties => {
       "SVport" => { "key" => "server-port", "value" => "25566" },
       "SVlevel-name" => { "key" => "level-name", "value" => "SurvivalWorld" },
