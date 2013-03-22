@@ -48,7 +48,7 @@ Vagrant::Config.run do |config|
       local.vm.host_name = ENV['VAGRANT_HOSTNAME'] || name.to_s.gsub(/_/, '-').concat("dev.ajbourg.com")
       config.vm.provision :shell, :path => "shell/main.sh"
       config.vm.share_folder "puppet", "/tmp/puppet", "./"
-      cfg[:ports].each { |local_port, vm_port| config.vm.forward_port vm_port.to_i, local_port.to_i }
+      if cfg[:ports] then cfg[:ports].each { |local_port, vm_port| config.vm.forward_port vm_port.to_i, local_port.to_i } end
     end
   end
 end
