@@ -36,6 +36,10 @@ Vagrant::Config.run do |config|
       :box     => 'ergonlogicsqueeze64',
       :box_url => 'http://ergonlogic.com/files/boxes/debian-current.box',
     },
+    :minecraft => {
+      :box     => 'minimal-debian-wheezy',
+      :box_url => 'http://dl.dropbox.com/u/937870/VMs/wheezy64.box',
+    }
   }.each do |name,cfg|
     config.vm.define name do |local|
       local.vm.box = cfg[:box]
