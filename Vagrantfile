@@ -39,6 +39,7 @@ Vagrant::Config.run do |config|
     :minecraft => {
       :box     => 'minimal-debian-wheezy',
       :box_url => 'http://dl.dropbox.com/u/937870/VMs/wheezy64.box',
+      :ports   => {'25566' => '25566'}
     }
   }.each do |name,cfg|
     config.vm.define name do |local|
@@ -47,6 +48,7 @@ Vagrant::Config.run do |config|
       local.vm.host_name = ENV['VAGRANT_HOSTNAME'] || name.to_s.gsub(/_/, '-').concat("dev.ajbourg.com")
       config.vm.provision :shell, :path => "shell/main.sh"
       config.vm.share_folder "puppet", "/tmp/puppet", "./"
+      cfg[:ports].each { |local_port, vm_port| config.vm.forward_port vm_port.to_i, local_port.to_i }
     end
   end
 end
