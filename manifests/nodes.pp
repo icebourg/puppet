@@ -46,6 +46,12 @@ node /srv.*/ inherits default {
     root    => "/var/www/blog.ajbourg.com/public",
     manage_directory => true,
   }
+  
+  include djbdns
+  
+  class { 'djbdns::zone':
+    zone_names => ['ajbourg.com', 'elevation14.com', 'itand.me', 'pixeldustr.com'],
+  }
 }
 
 node /minecraft\-.*/ inherits default {

@@ -23,7 +23,7 @@ if [ "$(gem search -i puppet)" = "false" ]; then
 fi
 
 
-cp -r /tmp/puppet $PUPPET_DIR
+cp -r /tmp/puppet/* $PUPPET_DIR
 
 if [ "$(gem search -i librarian-puppet)" = "false" ]; then
   gem install librarian-puppet --no-ri --no-rdoc

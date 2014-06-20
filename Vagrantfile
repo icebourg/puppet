@@ -12,6 +12,10 @@ Vagrant::Config.run do |config|
       :box     => 'centos-6.3-64bit',
       :box_url => 'http://packages.vstone.eu/vagrant-boxes/centos-6.3-64bit-latest.box',
     },
+    :Ubuntu1404_64_LTS => {
+      :box     => 'trusty64',
+      :box_url => 'http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box',
+    },
     :Ubuntu1304_64 => {
       :box     => 'raring64',
       :box_url => 'http://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-amd64-vagrant-disk1.box',
@@ -40,6 +44,10 @@ Vagrant::Config.run do |config|
       :box     => 'minimal-debian-wheezy',
       :box_url => 'http://dl.dropbox.com/u/937870/VMs/wheezy64.box',
       :ports   => {'25566' => '25566'}
+    },
+    :srv => {
+      :box     => 'quantal64',
+      :box_url => 'http://cloud-images.ubuntu.com/vagrant/quantal/current/quantal-server-cloudimg-amd64-vagrant-disk1.box',
     }
   }.each do |name,cfg|
     config.vm.define name do |local|
